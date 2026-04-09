@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografia</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a, #38bdf8);
+            padding: 20px;
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 450px; /* Un poco más ancho para acomodar mejor el texto */
+        }
+
+        .tarjeta {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            padding: 35px 30px;
+            text-align: center;
+            animation: aparecer 0.6s ease;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .titulo {
+            font-size: 30px;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 25px;
+        }
+
+        /* Estilos mejorados para los párrafos */
+        .bio-texto {
+            text-align: left;
+            line-height: 1.6;
+            color: #334155;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .seccion-bio {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 15px;
+            transition: transform 0.2s ease;
+        }
+
+        .seccion-bio:hover {
+            transform: scale(1.02);
+            border-color: #38bdf8;
+        }
+
+        .etiqueta-pequeña {
+            display: block;
+            font-size: 11px;
+            font-weight: bold;
+            color: #2563eb;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .acciones {
+            margin-top: 25px;
+        }
+
+        .boton {
+            display: block;
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 14px;
+            text-decoration: none;
+            text-align: center;
+            background: linear-gradient(135deg, #2563eb, #0ea5e9);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+        }
+
+        .boton:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 24px rgba(37, 99, 235, 0.35);
+        }
+
+        @media (max-width: 480px) {
+            .tarjeta {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+    <div class="tarjeta">
+        <h1 class="titulo">Biografía</h1>
+        <p class="subtitulo">Conoce un poco más sobre mi historia</p>
+
+        <div class="bio-texto">
+            <div class="seccion-bio">
+                <span class="etiqueta-pequeña">Mis Inicios</span>
+                <p>Nací el 1ro de junio de 2009 en una pequeña aldea al noroeste de <strong>Totonicapán</strong>. A los pocos meses de nacido, mi familia se mudó a la ciudad. Inicié mi primaria en una escuela pública cercana a mi casa.</p>
+            </div>
+
+            <div class="seccion-bio">
+                <span class="etiqueta-pequeña">Etapa Escolar</span>
+                <p>Debido a la pandemia, cursé 5to y 6to primaria a distancia. Continué con clases en línea durante 1ro básico, regresando a la "nueva normalidad" presencial para 2do y 3ro básico.</p>
+            </div>
+
+            <div class="seccion-bio">
+                <span class="etiqueta-pequeña">Camino a Kinal</span>
+                <p>Conocí el <strong>Centro Educativo Kinal</strong> gracias a un amigo. Aunque se quejaba del nivel de exigencia, decidí inscribirme porque ofrecían la carrera que realmente me apasiona.</p>
+            </div>
+
+            <div class="seccion-bio">
+                <span class="etiqueta-pequeña">Pasatiempos</span>
+                <p>En mi tiempo libre disfruto mucho de los videojuegos, escuchar música y ver películas.</p>
+            </div>
+        </div>
+
+        <div class="acciones">
+            <a class="boton" th:href="@{/home}">Volver al home</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
